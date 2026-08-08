@@ -1,0 +1,105 @@
+:root {
+  /* ---- Palette: dark examiner's desk + manila case-file panels ---- */
+  --desk-950: #0b0d0c;
+  --desk-900: #121513;
+  --desk-800: #1a1e1b;
+  --desk-700: #262b27;
+  --desk-line: #34392f;
+
+  --file-cream: #ece4d0;
+  --file-cream-dim: #d9d0b8;
+  --file-shadow: #b9ae8f;
+
+  --ink: #1c1a14;
+  --ink-soft: #4a4638;
+
+  --evidence-red: #b02e26;
+  --evidence-red-bright: #e0483c;
+  --verified-teal: #3c8c85;
+  --verified-teal-bright: #56b6ad;
+  --amber-flag: #c98a2c;
+
+  --text-primary: #e9e4d6;
+  --text-dim: #9a9686;
+  --text-faint: #5f5c50;
+
+  --font-stamp: 'Special Elite', 'Courier New', monospace;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+
+  --radius-file: 2px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--desk-950);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse 900px 500px at 20% -10%, rgba(60, 140, 133, 0.06), transparent),
+    radial-gradient(ellipse 700px 500px at 100% 10%, rgba(176, 46, 38, 0.05), transparent);
+}
+
+::selection {
+  background: var(--verified-teal);
+  color: var(--desk-950);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--desk-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--desk-line);
+  border-radius: 4px;
+}
+
+button {
+  font-family: var(--font-mono);
+  cursor: pointer;
+}
+
+a {
+  color: var(--verified-teal-bright);
+}
+
+:focus-visible {
+  outline: 2px solid var(--verified-teal-bright);
+  outline-offset: 2px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.stamp {
+  font-family: var(--font-stamp);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 860px) {
+  main > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+}
